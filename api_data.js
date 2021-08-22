@@ -101,9 +101,9 @@ define({ "api": [
   {
     "type": "get",
     "url": "/v1/mangas",
-    "title": "Get List Mangas",
+    "title": "Get List Mangass",
     "version": "0.1.0",
-    "name": "GetListMangas",
+    "name": "GetListMangass",
     "group": "Mangas_Management",
     "parameter": {
       "fields": {
