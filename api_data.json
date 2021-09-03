@@ -1,6 +1,141 @@
 [
   {
     "type": "post",
+    "url": "/v1/users/check-otp",
+    "title": "CheckOtp Customer",
+    "version": "0.1.0",
+    "name": "CheckOtpCustomer",
+    "group": "Auth_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>customer_otp email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "otp",
+            "description": "<p>customer_otp otp</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 5,\n        \"email\": \"hung1462k@gmail.com\",\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v1/users/forgot",
+    "title": "Forgot Customer",
+    "version": "0.1.0",
+    "name": "ForgotCustomer",
+    "group": "Auth_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>users email</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"id\": 5,\n        \"email\": \"hung1462k@gmail.com\",\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
     "url": "/v1/users/login",
     "title": "Login Customer",
     "version": "0.1.0",
@@ -133,6 +268,84 @@
         {
           "title": "Success-Response:",
           "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"customer_data\": {\n            \"id\": 15,\n            \"name\": null,\n            \"email\": \"hung1462k@gmail.com\"\n        },\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/users/refresh",
+    "title": "Refresh Customer",
+    "version": "0.1.0",
+    "name": "RefreshCustomer",
+    "group": "Auth_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>users email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password",
+            "description": "<p>users password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password_confirmation",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
           "type": "json"
         }
       ]
