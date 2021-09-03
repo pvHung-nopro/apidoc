@@ -1,5 +1,263 @@
 [
   {
+    "type": "post",
+    "url": "/v1/users/login",
+    "title": "Login Customer",
+    "version": "0.1.0",
+    "name": "LoginCustomer",
+    "group": "Auth_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>users email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password",
+            "description": "<p>users password</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"customer_data\": {\n            \"id\": 15,\n            \"name\": null,\n            \"email\": \"hung@gmail.com\"\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC92MVwvdXNlcnNcL2xvZ2luIiwiaWF0IjoxNjMwNDIxOTE1LCJleHAiOjE2MzA0MjU1MTUsIm5iZiI6MTYzMDQyMTkxNSwianRpIjoiQ3o4R3R6TmRTWVkxSkNQWSIsInN1YiI6MTUsInBydiI6IjQxZGY4ODM0ZjFiOThmNzBlZmE2MGFhZWRlZjQyMzQxMzcwMDY5MGMifQ.ufxSp-YJhnuj5_FKBfm36H-7DJvbYDCqo7Rpn9Li95g\",\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/users/logout",
+    "title": "Logout Customer",
+    "version": "0.1.0",
+    "name": "LogoutCustomer",
+    "group": "Auth_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/users/me",
+    "title": "Me Customer",
+    "version": "0.1.0",
+    "name": "MeCustomer",
+    "group": "Auth_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"customer_data\": {\n            \"id\": 15,\n            \"name\": null,\n            \"email\": \"hung1462k@gmail.com\"\n        },\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v1/users/register",
+    "title": "Register Customer",
+    "version": "0.1.0",
+    "name": "RegisterCustomer",
+    "group": "Auth_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>users name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "email",
+            "description": "<p>users email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password",
+            "description": "<p>users password</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "password_confirmation",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"customer_data\": {\n            \"id\": 15,\n            \"name\": null,\n            \"email\": \"hung@gmail.com\"\n        },\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC92MVwvdXNlcnNcL2xvZ2luIiwiaWF0IjoxNjMwNDIxOTE1LCJleHAiOjE2MzA0MjU1MTUsIm5iZiI6MTYzMDQyMTkxNSwianRpIjoiQ3o4R3R6TmRTWVkxSkNQWSIsInN1YiI6MTUsInBydiI6IjQxZGY4ODM0ZjFiOThmNzBlZmE2MGFhZWRlZjQyMzQxMzcwMDY5MGMifQ.ufxSp-YJhnuj5_FKBfm36H-7DJvbYDCqo7Rpn9Li95g\",\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/AuthMangaApiDoc.php",
+    "groupTitle": "Auth_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "get",
     "url": "/v1/mangas/categories",
     "title": "Get List Category Mangas",
