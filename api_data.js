@@ -782,5 +782,83 @@ define({ "api": [
         }
       ]
     }
+  },
+  {
+    "type": "get",
+    "url": "/v1/masters/home",
+    "title": "Master Home Mangas",
+    "version": "0.1.0",
+    "name": "MasterHomeMangas",
+    "group": "Master_Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "limit_slider",
+            "description": "<p>Item in limit_slider</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "limit_manga_new",
+            "description": "<p>Item in limit_manga_new</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "limit_manga_top",
+            "description": "<p>Item in limit_manga_top</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"slider\": [\n            {\n                \"id\": 1,\n                \"image_url\": \"http://localhost/storage/sliders/hjhjhjhj\",\n                \"title\": \"hjhjhjh\",\n                \"public\": true,\n                \"seo_title\": \"fdfdsf\",\n                \"seo_description\": \"fdfdfd\",\n                \"seo_slug\": null\n            }\n        ],\n        \"manga_new\": [\n            {\n                \"id\": 9,\n                \"name\": \"Meaghan Bogisich\",\n                \"thumbnail\": \"http://localhost/storage/mangas/Alessandra Schowalter Sr.\",\n                \"another_name\": \"Wilhelm Carroll\",\n                \"public\": true,\n                \"status\": 1,\n                \"approval_status\": 1,\n                \"note\": \"Mrs. Elta Gutmann\",\n                \"title\": [],\n                \"chapter\": {\n                    \"id\": 12,\n                    \"name\": \"fsdf\"\n                },\n                \"period_time\": 12,\n                \"type_period_time\": 2,\n                \"views\": 0,\n                \"follow\": 2,\n                \"created_at\": \"2021-08-23 15:45:39\",\n                \"seo_title\": \"Tracy Stokes DDS\",\n                \"seo_description\": \"Brendon Fisher\",\n                \"seo_slug\": \"Aryanna Carter\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"Meaghan Bogisich\",\n                \"thumbnail\": \"http://localhost/storage/mangas/Alessandra Schowalter Sr.\",\n                \"another_name\": \"Wilhelm Carroll\",\n                \"public\": true,\n                \"status\": 1,\n                \"approval_status\": 1,\n                \"note\": \"Mrs. Elta Gutmann\",\n                \"title\": [],\n                \"chapter\": {\n                    \"id\": 11,\n                    \"name\": \"dfdsfdfd\"\n                },\n                \"period_time\": 12,\n                \"type_period_time\": 2,\n                \"views\": 0,\n                \"follow\": 2,\n                \"created_at\": \"2021-08-23 15:45:39\",\n                \"seo_title\": \"Tracy Stokes DDS\",\n                \"seo_description\": \"Brendon Fisher\",\n                \"seo_slug\": \"Aryanna Carter\"\n            }\n        ],\n        \"manga_top\": [\n            {\n                \"id\": 1,\n                \"name\": \"abc\",\n                \"thumbnail\": \"http://localhost/storage/mangas/abc\",\n                \"another_name\": \"abc\",\n                \"public\": true,\n                \"status\": 1,\n                \"approval_status\": 1,\n                \"note\": \"abc\",\n                \"title\": [],\n                \"chapter\": {\n                    \"id\": 2,\n                    \"name\": \"chapter53\"\n                },\n                \"period_time\": 26,\n                \"type_period_time\": 2,\n                \"views\": 3,\n                \"follow\": 2,\n                \"created_at\": \"2021-08-10 00:00:00\",\n                \"seo_title\": \"abc\",\n                \"seo_description\": \"abc\",\n                \"seo_slug\": null\n            }\n        ],\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/MasterHomeApiDoc.php",
+    "groupTitle": "Master_Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
   }
 ] });
