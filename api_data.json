@@ -1,5 +1,69 @@
 [
   {
+    "type": "get",
+    "url": "/v1/admin/sliders/upload",
+    "title": "Upload Image Slider Mangas",
+    "version": "0.1.0",
+    "name": "UploadImageSliderManga",
+    "group": "Admin_Slider_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": true,
+            "field": "file",
+            "description": "<p>Current page</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"image_path\": \"1631117385_zIE5tl0fyi.jpg\",\n        \"image_url\": \"http://localhost:8000/storage/sliders/1631117385_zIE5tl0fyi.jpg\",\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/SliderAdminMangaApiDoc.php",
+    "groupTitle": "Admin_Slider_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "post",
     "url": "/v1/users/check-otp",
     "title": "CheckOtp Customer",
