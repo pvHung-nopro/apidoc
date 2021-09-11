@@ -99,77 +99,6 @@
     }
   },
   {
-    "type": "patch",
-    "url": "/v1/admin/sliders",
-    "title": "Create Slider Mangas",
-    "version": "0.1.0",
-    "name": "CreatedSliderMangas",
-    "group": "Admin_Slider_Management",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "array",
-            "optional": false,
-            "field": "ids",
-            "description": "<p>id sliders</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": false,
-            "field": "public",
-            "description": "<p>public sliders public:1 unPublic:0</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "apidoc/SliderAdminMangaApiDoc.php",
-    "groupTitle": "Admin_Slider_Management",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Bearer <code>token</code></p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "system_error",
-            "description": "<p>System Error</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Example",
-          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
-          "type": "json"
-        }
-      ]
-    }
-  },
-  {
     "type": "get",
     "url": "/v1/admin/sliders/:sliderId",
     "title": "Detail Slider Mangas",
@@ -273,6 +202,77 @@
         {
           "title": "Success-Response:",
           "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"data_list\": [\n            {\n                \"id\": 2,\n                \"image_url\": \"http://localhost:8000/storage/sliders/abc\",\n                \"title\": \"abc\",\n                \"public\": false,\n                \"seo_title\": \"abc\",\n                \"seo_description\": \"abc\",\n                \"seo_slug\": \"abc\"\n            }\n        ],\n        \"metadata\": {\n            \"current_page\": 1,\n            \"limit\": 10,\n            \"total\": 2\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/SliderAdminMangaApiDoc.php",
+    "groupTitle": "Admin_Slider_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "patch",
+    "url": "/v1/admin/sliders",
+    "title": "Update Public Slider Mangas",
+    "version": "0.1.0",
+    "name": "UpdatePublicSliderMangas",
+    "group": "Admin_Slider_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array",
+            "optional": false,
+            "field": "ids",
+            "description": "<p>id sliders</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "public",
+            "description": "<p>public sliders public:1 unPublic:0</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
           "type": "json"
         }
       ]
