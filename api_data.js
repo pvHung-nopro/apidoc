@@ -1249,6 +1249,154 @@ define({ "api": [
     }
   },
   {
+    "type": "post",
+    "url": "/v1/mangas",
+    "title": "Create Managa Customer",
+    "version": "0.1.0",
+    "name": "CreateManagaCustomer",
+    "group": "Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "thumbnail",
+            "description": "<p>Managa thumbnail</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Managa name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "note",
+            "description": "<p>Managa note</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "seo_title",
+            "description": "<p>SEO title</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "seo_description",
+            "description": "<p>SEO description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "seo_slug",
+            "description": "<p>SEO slug</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "public",
+            "description": "<p>Public public</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": true,
+            "field": "categories",
+            "description": "<p>array category ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Status status</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Object[]",
+            "optional": true,
+            "field": "chapters",
+            "description": "<p>array chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "chapters.name",
+            "description": "<p>name chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "chapters.index",
+            "description": "<p>index chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "chapters.title",
+            "description": "<p>title chapter</p>"
+          }
+        ]
+      }
+    },
+    "filename": "apidoc/MangaCustomerApiDoc.php",
+    "groupTitle": "Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Example",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "get",
     "url": "/v1/mangas/:id",
     "title": "Get Detail Mangas",
@@ -1492,10 +1640,163 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "api/v1/profile/:profileId",
-    "title": "Create Flow Mangas",
+    "url": "api/v1/profile/:profileId/manga_create",
+    "title": "List Manga Create Profile Mangas",
     "version": "0.1.0",
-    "name": "CreateFlowMangas",
+    "name": "ListMangaCreateProfileMangas",
+    "group": "Profile_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "\n{\n    \"code\": 200,\n    \"data\": {\n        \"manga_create\": [\n            {\n                \"id\": 59,\n                \"name\": \"bav\",\n                \"thumbnail\": \"http://localhost:8000/storage/mangas/abv\",\n                \"another_name\": null,\n                \"public\": true,\n                \"status\": null,\n                \"approval_status\": 1,\n                \"note\": null,\n                \"title\": [],\n                \"chapter\": {\n                    \"id\": 15,\n                    \"name\": \"chapter1\"\n                },\n                \"period_time\": 3,\n                \"type_period_time\": 2,\n                \"views\": 0,\n                \"follow\": 0,\n                \"flow_status\": 0,\n                \"created_at\": \"2021-09-18 14:18:40\",\n                \"seo_title\": null,\n                \"seo_description\": null,\n                \"seo_slug\": null\n            },\n            {\n                \"id\": 60,\n                \"name\": \"bav\",\n                \"thumbnail\": \"http://localhost:8000/storage/mangas/lolll\",\n                \"another_name\": null,\n                \"public\": true,\n                \"status\": null,\n                \"approval_status\": 1,\n                \"note\": null,\n                \"title\": [],\n                \"chapter\": {\n                    \"id\": 17,\n                    \"name\": \"chapter1\"\n                },\n                \"period_time\": 3,\n                \"type_period_time\": 2,\n                \"views\": 0,\n                \"follow\": 0,\n                \"flow_status\": 0,\n                \"created_at\": \"2021-09-18 14:21:17\",\n                \"seo_title\": null,\n                \"seo_description\": null,\n                \"seo_slug\": null\n            }\n        ],\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ProfileMangaApiDoc.php",
+    "groupTitle": "Profile_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "api/v1/profile/:profileId/manga_flow",
+    "title": "List Manga Flow Profile Mangas",
+    "version": "0.1.0",
+    "name": "ListMangaFlowProfileMangas",
+    "group": "Profile_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"manga_flow\": [\n            {\n                \"id\": 1,\n                \"name\": \"abc\",\n                \"thumbnail\": \"http://localhost:8000/storage/mangas/abc\",\n                \"another_name\": \"abc\",\n                \"public\": true,\n                \"status\": 1,\n                \"approval_status\": 1,\n                \"note\": \"abc\",\n                \"title\": [],\n                \"chapter\": {\n                    \"id\": 2,\n                    \"name\": \"chapter53\"\n                },\n                \"period_time\": 1,\n                \"type_period_time\": 1,\n                \"views\": 3,\n                \"follow\": 1,\n                \"flow_status\": 0,\n                \"created_at\": \"2021-08-10 00:00:00\",\n                \"seo_title\": \"abc\",\n                \"seo_description\": \"abc\",\n                \"seo_slug\": null\n            }\n        ],\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ProfileMangaApiDoc.php",
+    "groupTitle": "Profile_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "api/v1/profile/:profileId/user_flow",
+    "title": "List User Flow Profile Mangas",
+    "version": "0.1.0",
+    "name": "ListUserFlowProfileMangas",
+    "group": "Profile_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"user_flow\": [\n            {\n                \"id\": 13,\n                \"name\": null,\n                \"avatar_url\": null,\n                \"nick_name\": null,\n                \"flow_status\": null\n            },\n            {\n                \"id\": 51,\n                \"name\": \"hung pham\",\n                \"avatar_url\": null,\n                \"nick_name\": null,\n                \"flow_status\": null\n            },\n            {\n                \"id\": 54,\n                \"name\": \"fdfhdsjfhnkdsfd\",\n                \"avatar_url\": null,\n                \"nick_name\": null,\n                \"flow_status\": null\n            }\n        ],\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ProfileMangaApiDoc.php",
+    "groupTitle": "Profile_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "api/v1/profile/:profileId",
+    "title": "Profile Detail Mangas",
+    "version": "0.1.0",
+    "name": "ProfileDetailFlowMangas",
     "group": "Profile_Management",
     "success": {
       "examples": [
