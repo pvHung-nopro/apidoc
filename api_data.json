@@ -1645,6 +1645,19 @@
     "version": "0.1.0",
     "name": "ListMangaCreateProfileMangas",
     "group": "Profile_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>search by name, title_mangas_title manga_categories_name</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -1696,6 +1709,19 @@
     "version": "0.1.0",
     "name": "ListMangaFlowProfileMangas",
     "group": "Profile_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>search by name, title_mangas_title manga_categories_name</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -1747,6 +1773,19 @@
     "version": "0.1.0",
     "name": "ListUserFlowProfileMangas",
     "group": "Profile_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>search by name, title_mangas_title manga_categories_name</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
@@ -1803,6 +1842,70 @@
         {
           "title": "Success-Response:",
           "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"profile\": {\n            \"id\": 1,\n            \"name\": null,\n            \"email\": \"\",\n            \"avatar_url\": null,\n            \"nick_name\": null,\n            \"phone\": null,\n            \"birth_day\": null,\n            \"gender\": null,\n            \"proflie_flow\": {\n                \"proflie_list\": [\n                    {\n                        \"id\": 13,\n                        \"name\": null,\n                        \"avatar_url\": null,\n                        \"nick_name\": null,\n                        \"flow_status\": 1\n                    },\n                    {\n                        \"id\": 54,\n                        \"name\": \"fdfhdsjfhnkdsfd\",\n                        \"avatar_url\": null,\n                        \"nick_name\": null,\n                        \"flow_status\": 0\n                    }\n                ],\n                \"profile_count\": 3\n            },\n            \"manga_flow\": {\n                \"manga_list\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"abc\",\n                        \"thumbnail\": \"http://localhost:8000/storage/mangas/abc\",\n                        \"another_name\": \"abc\",\n                        \"public\": true,\n                        \"status\": 1,\n                        \"approval_status\": 1,\n                        \"note\": \"abc\",\n                        \"title\": [],\n                        \"chapter\": {\n                            \"id\": 2,\n                            \"name\": \"chapter53\"\n                        },\n                        \"period_time\": 1,\n                        \"type_period_time\": 1,\n                        \"views\": 3,\n                        \"follow\": 2,\n                        \"flow_status\": 1,\n                        \"created_at\": \"2021-08-10 00:00:00\",\n                        \"seo_title\": \"abc\",\n                        \"seo_description\": \"abc\",\n                        \"seo_slug\": null\n                    }\n                ],\n                \"manga_count\": 1\n            }\n        },\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ProfileMangaApiDoc.php",
+    "groupTitle": "Profile_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v1/profile/upload/avatar",
+    "title": "Upload Image Avatar Profile",
+    "version": "0.1.0",
+    "name": "UploadImageAvatarProfile",
+    "group": "Profile_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": true,
+            "field": "file",
+            "description": "<p>Current page</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"image_path\": \"51/1633014240_xGsRyDtYgr.jpg\",\n        \"image_url\": \"http://localhost:8000/storage/users/51/1633014240_xGsRyDtYgr.jpg\",\n        \"metadata\": {}\n    }\n}",
           "type": "json"
         }
       ]
