@@ -1397,6 +1397,57 @@ define({ "api": [
     }
   },
   {
+    "type": "delete",
+    "url": "/v1/mangas/:mangaId",
+    "title": "Delete Managa Customer",
+    "version": "0.1.0",
+    "name": "DeleteManagaCustomer",
+    "group": "Mangas_Management",
+    "filename": "apidoc/MangaCustomerApiDoc.php",
+    "groupTitle": "Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Example",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "get",
     "url": "/v1/mangas/:id",
     "title": "Get Detail Mangas",
@@ -1521,6 +1572,190 @@ define({ "api": [
         {
           "title": "Success-Response:",
           "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"data_list\": [\n            {\n                \"id\": 12,\n                \"name\": \"Marietta Howe\",\n                \"thumbnail\": \"http://localhost/storage/mangas/Dennis Pacocha\",\n                \"another_name\": \"Concepcion Hyatt\",\n                \"public\": true,\n                \"status\": 1,\n                \"approval_status\": 1,\n                \"note\": \"Mr. Jarod Carroll\",\n                \"title\": [],\n                \"period_time\": 2,\n                \"type_period_time\": 2,\n                \"views\": 12,\n                \"follow\": 2,\n                \"created_at\": \"2021-08-23 16:45:39\",\n                \"seo_title\": \"Miss Makenzie Swaniawski V\",\n                \"seo_description\": \"Carolina Herman\",\n                \"seo_slug\": \"Mr. Connor Erdman\"\n            }\n        ],\n        \"metadata\": {\n            \"current_page\": 1,\n            \"limit\": 1,\n            \"total\": 12\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/MangaCustomerApiDoc.php",
+    "groupTitle": "Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/mangas/:mangaId",
+    "title": "Update Managa Customer",
+    "version": "0.1.0",
+    "name": "UpdateManagaCustomer",
+    "group": "Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "thumbnail",
+            "description": "<p>Managa thumbnail</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Managa name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "note",
+            "description": "<p>Managa note</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "seo_title",
+            "description": "<p>SEO title</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "seo_description",
+            "description": "<p>SEO description</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "seo_slug",
+            "description": "<p>SEO slug</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "public",
+            "description": "<p>Public public</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": true,
+            "field": "categories",
+            "description": "<p>array category ids</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "status",
+            "description": "<p>Status status</p>"
+          }
+        ]
+      }
+    },
+    "filename": "apidoc/MangaCustomerApiDoc.php",
+    "groupTitle": "Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Example",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "post",
+    "url": "/v1/mangas/upload/thumbnail",
+    "title": "Upload Thumbnail Manga",
+    "version": "0.1.0",
+    "name": "UploadThumbnailManga",
+    "group": "Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": true,
+            "field": "file",
+            "description": "<p>Current page</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"image_path\": \"thumbnail/51/1633447161_de97lT6jf0.jpg\",\n        \"image_url\": \"http://localhost:8000/storage/mangas/thumbnail/51/1633447161_de97lT6jf0.jpg\",\n        \"metadata\": {}\n    }\n}",
           "type": "json"
         }
       ]
