@@ -1096,6 +1096,84 @@ define({ "api": [
     }
   },
   {
+    "type": "post",
+    "url": "/v1/mangas/:mangaId/chapter",
+    "title": "Create Chapter Managa Customer",
+    "version": "0.1.0",
+    "name": "CreateChapterManagaCustomer",
+    "group": "Chapter_Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "index",
+            "description": "<p>index chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title chapter</p>"
+          }
+        ]
+      }
+    },
+    "filename": "apidoc/ChapterMangaApiDoc.php",
+    "groupTitle": "Chapter_Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Example",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "patch",
     "url": "v1/mangas/:mangaId/favorite",
     "title": "Create Favorite Mangas",
