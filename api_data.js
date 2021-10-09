@@ -1037,7 +1037,7 @@ define({ "api": [
     "title": "Get List Image Chapter",
     "version": "0.1.0",
     "name": "GetListImageChapter",
-    "group": "Chapter_Management",
+    "group": "Chapter_Image_Management",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1061,7 +1061,78 @@ define({ "api": [
       ]
     },
     "filename": "apidoc/ImageChapterApiDoc.php",
-    "groupTitle": "Chapter_Management",
+    "groupTitle": "Chapter_Image_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/mangas/:mangaId/chapters/:chapId/upload/image",
+    "title": "Upload Image Chapter",
+    "version": "0.1.0",
+    "name": "UploadImageChapter",
+    "group": "Chapter_Image_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Array",
+            "optional": false,
+            "field": "images",
+            "description": "<p>Images chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "file",
+            "optional": false,
+            "field": "images.file",
+            "description": "<p>file Images chapter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"images\": [\n            {\n                \"image_path\": \"1/2/1633802118_SXRjjgxNnI.jpg\",\n                \"image_url\": \"http://localhost:8000/storage/image-chapter/1/2/1633802118_SXRjjgxNnI.jpg\",\n                \"number_pages\": 1\n            },\n            {\n                \"image_path\": \"1/2/1633802118_cLRBPQdHy1.jpg\",\n                \"image_url\": \"http://localhost:8000/storage/image-chapter/1/2/1633802118_cLRBPQdHy1.jpg\",\n                \"number_pages\": 2\n            }\n        ],\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ImageChapterApiDoc.php",
+    "groupTitle": "Chapter_Image_Management",
     "header": {
       "fields": {
         "Header": [
@@ -1129,6 +1200,15 @@ define({ "api": [
         ]
       }
     },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"chapter\": {\n            \"id\": 22,\n            \"name\": \"chapter3\",\n            \"index\": 2,\n            \"title\": \"kkkk\"\n        },\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
     "filename": "apidoc/ChapterMangaApiDoc.php",
     "groupTitle": "Chapter_Mangas_Management",
     "header": {
@@ -1144,14 +1224,198 @@ define({ "api": [
         ]
       }
     },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/mangas/:mangaId/chapter/:chapterId",
+    "title": "Update Chapter Managa Customer",
+    "version": "0.1.0",
+    "name": "CreateChapterManagaCustomer",
+    "group": "Chapter_Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title chapter</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "examples": [
         {
-          "title": "Success-Example",
+          "title": "Success-Response:",
           "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
           "type": "json"
         }
       ]
+    },
+    "filename": "apidoc/ChapterMangaApiDoc.php",
+    "groupTitle": "Chapter_Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/mangas/:mangaId/chapter/:chapterId",
+    "title": "Update Chapter Managa Customer",
+    "version": "0.1.0",
+    "name": "CreateChapterManagaCustomer",
+    "group": "Chapter_Mangas_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>name chapter</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "title",
+            "description": "<p>title chapter</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ChapterMangaApiDoc.php",
+    "groupTitle": "Chapter_Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/v1/mangas/:mangaId/chapter/:chapterId",
+    "title": "Delete Chapter Managa Customer",
+    "version": "0.1.0",
+    "name": "DeleteChapterManagaCustomer",
+    "group": "Chapter_Mangas_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/ChapterMangaApiDoc.php",
+    "groupTitle": "Chapter_Mangas_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
     },
     "error": {
       "fields": {
