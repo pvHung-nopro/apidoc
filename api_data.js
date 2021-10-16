@@ -1,5 +1,248 @@
 define({ "api": [
   {
+    "type": "get",
+    "url": "/v1/admin/customers/:customerId",
+    "title": "Detail Customer Admin Mangas",
+    "version": "0.1.0",
+    "name": "DetailCustomerAdminMangas",
+    "group": "Admin_Customer_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"user_data\": {\n            \"id\": 51,\n            \"name\": \"hung pham a\",\n            \"avatar_url\": \"http://localhost:8000/storage/users/abc\",\n            \"nick_name\": null,\n            \"email\": \"hung1462k@gmail.com\",\n            \"gender\": null,\n            \"birth_day\": null,\n            \"phone\": null,\n            \"number_manga\": 2,\n            \"number_manga_wait\": 0,\n            \"number_manga_approve\": 1,\n            \"number_manga_not\": 1\n        },\n       \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/CustomerAdminMangaApiDoc.php",
+    "groupTitle": "Admin_Customer_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "put",
+    "url": "/v1/admin/customers/:customerId",
+    "title": "Detail Customer Admin Mangas",
+    "version": "0.1.0",
+    "name": "DetailCustomerAdminMangas",
+    "group": "Admin_Customer_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/CustomerAdminMangaApiDoc.php",
+    "groupTitle": "Admin_Customer_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/admin/customers/export",
+    "title": "Export Customer Admin Mangas",
+    "version": "0.1.0",
+    "name": "ExportCustomerAdminMangas",
+    "group": "Admin_Customer_Management",
+    "filename": "apidoc/CustomerAdminMangaApiDoc.php",
+    "groupTitle": "Admin_Customer_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/admin/customers/list",
+    "title": "List Customer Admin Mangas",
+    "version": "0.1.0",
+    "name": "ListCustomerAdminMangas",
+    "group": "Admin_Customer_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "description": "<p>Current page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>Item in page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>search by name, nick_name, email, phone</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "sort[created_at]",
+            "description": "<p>Sort by customer_created_at: ASC - Up, DESC - Down</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "sort[birth_day]",
+            "description": "<p>Sort by customer_created_at: ASC - Up, DESC - Down</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "filter[gender]",
+            "description": "<p>filter by customer_gender  Girl:0, Boy:1</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"user_list\": [\n            {\n                \"id\": 51,\n                \"name\": \"hung pham a\",\n                \"avatar_url\": \"http://localhost:8000/storage/users/abc\",\n                \"nick_name\": null,\n                \"email\": \"hung1462k@gmail.com\",\n                \"gender\": null,\n                \"birth_day\": null,\n                \"phone\": null\n            }\n        ],\n        \"metadata\": {\n            \"current_page\": 1,\n            \"limit\": 10,\n            \"total\": 1\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/CustomerAdminMangaApiDoc.php",
+    "groupTitle": "Admin_Customer_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
     "type": "post",
     "url": "/v1/admin/sliders/",
     "title": "Create Slider Mangas",
