@@ -53,9 +53,9 @@ define({ "api": [
   {
     "type": "put",
     "url": "/v1/admin/customers/:customerId",
-    "title": "Detail Customer Admin Mangas",
+    "title": "Edit Customer Admin Mangas",
     "version": "0.1.0",
-    "name": "DetailCustomerAdminMangas",
+    "name": "EditCustomerAdminMangas",
     "group": "Admin_Customer_Management",
     "success": {
       "examples": [
