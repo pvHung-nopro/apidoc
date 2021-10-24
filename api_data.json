@@ -790,84 +790,6 @@
     }
   },
   {
-    "type": "post",
-    "url": "/v1/admin/auth/login",
-    "title": "Login Admin",
-    "version": "0.1.0",
-    "name": "LoginAdmin",
-    "group": "Auth_Admin_Management",
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "email",
-            "description": "<p>admins email</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": true,
-            "field": "password",
-            "description": "<p>admins password</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "Boolean",
-            "optional": true,
-            "field": "remember_token",
-            "description": "<p>admins remember_token</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Response:",
-          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"admin\": {\n            \"id\": 1,\n            \"name\": \"admin\",\n            \"email\": \"admin@gmail.com\"\n        },\n        \"token\": \"$2y$10$Zh1BUMhWSEK3LQBhLoTo.uQiih9F7mqz0F4kQojIDhTB4KW132Lwy#$2y$10$KUKKyBdb/ph8f2HGk7C7BONdkdIWj7BTBNBka3UK8LnPyPmEW5GOi#$2y$10$t1/aZz5ZLobzb3WFmk3v2Own0ky0A33KojCpdUxwMdlSUPMMxQfrG\",\n        \"metadata\": {}\n    }\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "apidoc/AuthAdminMangaApidoc.php",
-    "groupTitle": "Auth_Admin_Management",
-    "header": {
-      "fields": {
-        "Header": [
-          {
-            "group": "Header",
-            "type": "String",
-            "optional": false,
-            "field": "Authorization",
-            "description": "<p>Bearer <code>token</code></p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "system_error",
-            "description": "<p>System Error</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Example",
-          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
-          "type": "json"
-        }
-      ]
-    }
-  },
-  {
     "type": "get",
     "url": "/v1/admin/auth/me",
     "title": "Me Admin",
@@ -2149,6 +2071,249 @@
     },
     "filename": "apidoc/FlowMangaApiDoc.php",
     "groupTitle": "Flow_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/admin/customer/mangas/:mangaId",
+    "title": "Get Detail Admin Mangas",
+    "version": "0.1.0",
+    "name": "GetDetailAdminMangas",
+    "group": "Mangas_Admin_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"post_data\": {\n            \"id\": 5,\n            \"name\": \"Mrs. Tyra Friesen\",\n            \"thumbnail\": \"http://localhost/storage/mangas/Jayce Tillman\",\n            \"another_name\": \"Prof. Florence Davis\",\n            \"public\": true,\n            \"status\": 1,\n            \"approval_status\": 1,\n            \"note\": \"Bernice Hartmann\",\n            \"title\": [],\n            \"author\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Alec Schoen\",\n                    \"fullname\": \"fullnameCatherine Wyman\",\n                    \"introduce\": \"introduceKaya Gutkowski MD\"\n                }\n            ],\n            \"chapter\": [\n                {\n                    \"id\": 8,\n                    \"name\": \"chapter28\",\n                    \"created_at\": \"2021-08-29\"\n                }\n            ],\n            \"views\": 12,\n            \"follow\": 2,\n            \"created_at\": \"2021-08-23 15:45:39\",\n            \"seo_title\": \"Jocelyn Gaylord\",\n            \"seo_description\": \"Cristian Schmidt PhD\",\n            \"seo_slug\": \"Neil Hane II\"\n        },\n        \"metadata\": {}\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/MangaAdminApiDoc.php",
+    "groupTitle": "Mangas_Admin_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "get",
+    "url": "/v1/admin/customer/mangas",
+    "title": "Get List Mangas",
+    "version": "0.1.0",
+    "name": "GetListAdminMangas",
+    "group": "Mangas_Admin_Management",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "page",
+            "description": "<p>Current page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "limit",
+            "description": "<p>Item in page</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "q",
+            "description": "<p>search by name, title_mangas_title manga_categories_name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "filter[manga_status]",
+            "description": "<p>filter by mangas status  NORMAL:0, HOST:1, NEWS:2</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "filter[manga_approval_status]",
+            "description": "<p>filter by mangas status  WAIT:0, APPROVE:1, NOT:2</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "sort[manga_name]",
+            "description": "<p>Sort by mangasname: ASC - Up, DESC - Down</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "sort[manga_created_at]",
+            "description": "<p>Sort by mangas created_at: ASC - Up, DESC - Down</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "search[category_manga_name]",
+            "description": "<p>Search by category_mangas name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "search[category_manga_id]",
+            "description": "<p>Search by category_mangas id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "search[users_name]",
+            "description": "<p>Search by users_name id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "search[users_id]",
+            "description": "<p>Search by users_id id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "search[manga_created_at]",
+            "description": "<p>Search by manga_created_at id</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {\n        \"data_list\": [\n            {\n                \"id\": 61,\n                \"name\": \"bav\",\n                \"thumbnail\": \"http://localhost:8000/storage/mangas/lolll\",\n                \"another_name\": null,\n                \"public\": true,\n                \"status\": null,\n                \"approval_status\": null,\n                \"note\": null,\n                \"created_at\": \"2021-10-24 14:22:28\",\n                \"customers\": {\n                    \"id\": 51,\n                    \"name\": \"hung pham a\",\n                    \"nickname\": null\n                }\n            }\n        ],\n        \"metadata\": {\n            \"current_page\": 1,\n            \"limit\": 10,\n            \"total\": 1\n        }\n    }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/MangaAdminApiDoc.php",
+    "groupTitle": "Mangas_Admin_Management",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Bearer <code>token</code></p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "system_error",
+            "description": "<p>System Error</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Example",
+          "content": "{\n    \"code\": 500,\n    \"messages\": [\n        \"System error\"\n    ]\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "patch",
+    "url": "/v1/admin/customer/mangas/:mangaId",
+    "title": "Update Approval Admin Mangas",
+    "version": "0.1.0",
+    "name": "UpdateApprovalAdminMangas",
+    "group": "Mangas_Admin_Management",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n    \"code\": 200,\n    \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "apidoc/MangaAdminApiDoc.php",
+    "groupTitle": "Mangas_Admin_Management",
     "header": {
       "fields": {
         "Header": [
